@@ -26,6 +26,8 @@ class ClearCacheCommand extends BaseCommand {
 
     // empty the cache directory
     dir::clean(getcwd() . '/site/cache');
+    file_put_contents(getcwd() . '/site/cache/.gitkeep', '');
+    file_put_contents(getcwd() . '/site/cache/.index.html', '');
 
     $output->writeln('<comment>The cache folder has been emptied</comment>');
 
